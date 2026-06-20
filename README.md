@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project uses a marketing A/B test dataset of 588,101 users split into two groups: one shown real ads, one shown a public service announcement (PSA) used as a control. The data captures whether each user converted, how many ads they saw, and when they saw the most ads (day of week and hour). There is no time period attached to the raw data, but the scale of it, nearly 600,000 users, suggests a campaign run over several weeks. The business question: did the ads actually work, and if so, under what conditions?
+The business wants to know if ads actually work, and if so, under what conditions? This project uses a marketing A/B test dataset of 588,101 users split into two groups: one shown real ads, one shown a public service announcement (PSA) used as a control. The data captures whether each user converted, how many ads they saw, and when they saw the most ads (day of week and hour). There is no time period attached to the raw data, but the scale of it, nearly 600,000 users, suggests a campaign run over several weeks. 
 
 Full SQL Code: [ab_testing_project.sql](marketing_ab_testing_project.sql)
 
@@ -38,11 +38,11 @@ On timing, Monday produces the highest conversion rate among days of the week. F
 
 The group imbalance is the most important caveat. With 96% of users in the ad group, the PSA group is small enough that its 1.79% conversion rate is less stable. A different random sample from the same population could shift that number.
 
-The assignment question matters more, though. I do not know how users ended up in each group. If the assignment was not truly random ,for example, if users who had already shown purchase intent were disproportionately shown ads — then the conversion lift reflects selection bias, not ad effectiveness. The frequency correlation has the same problem: users who were shown 100+ ads may simply be more engaged users who visit the platform more often. If that is the case, the frequency effect is not causal.
+The assignment question matters more, though. I do not know how users ended up in each group. If the assignment was not truly random ,for example, if users who had already shown purchase intent were disproportionately shown ads then the conversion lift reflects selection bias, not ad effectiveness. The frequency correlation has the same problem: users who were shown 100+ ads may simply be more engaged users who visit the platform more often. If that is the case, the frequency effect is not causal.
 
 There is also no demographic data in this dataset. Age, geography, device type, and existing customer status all affect conversion rates in most real-world campaigns, and none of that is controllable here. The time-of-day findings are descriptive,they show when conversions happened to occur, but without randomizing ad delivery times across a controlled experiment, you cannot conclude that shifting spend to Monday afternoons will replicate those rates.
 
 ---
 
 **Tools:** MySQL  
-**Dataset:** [Marketing A/B Testing Dataset — Kaggle](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing)
+**Dataset:** [Marketing A/B Testing Dataset](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing)
